@@ -15,6 +15,11 @@
     class StylistTest extends PHPUnit_Framework_TestCase
     {
 
+        protected function tearDown()
+        {
+            Stylist::deleteAll();
+        }
+
         function test_getName()
         {
             //Arrange
@@ -58,7 +63,20 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        function test_save()
+        {
+            //Arrange
+            $name = "Carrie";
+            $description = "My specialties are womens cuts";
+            $test_stylist = new Stylist($name, $description);
 
+            //Act
+            $test_stylist->save();
+            $result = Stylist::getAll();
+
+            //Assert
+            $this->assertEquals($test_stylist, $result[0]);
+        }
 
     }
 
