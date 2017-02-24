@@ -138,6 +138,23 @@
             $this->assertEquals($test_stylist, $result);
         }
 
+        function test_update()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $test_stylist = new Stylist($name, $description);
+            $test_stylist->save();
+
+            //Act
+            $new_description = "I only do buzz cuts";
+            $test_stylist->updateDescription($new_description);
+            $result = Stylist::getAll();
+
+            //Assert
+            $this->assertEquals($new_description, $result[0]->getDescription());
+        }
+
     }
 
 ?>

@@ -39,6 +39,13 @@
             return $this->id;
         }
 
+        function updateDescription($new_description)
+        {
+            $exec = $GLOBALS['DB']->prepare("UPDATE stylists SET description = :description WHERE id = :id;");
+            $exec->execute([':description' => $new_description, ':id' => $this->getId()]);
+            $this->setDescription($new_description);
+        }
+
         //using prepared statements will allow users to enter special characters such as apostrophes or backslashes without creating errors in the database; Also prevents against injection attacks
 
         function save()
