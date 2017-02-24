@@ -60,7 +60,18 @@
     $app->delete('/stylists/{id}', function($id) use($app) {
         $stylist = Stylist::find($id);
         $stylist->delete();
-        return $app['twig']->render('homepage.html.twig', ['stylists' => Stylist::getAll()]);
+        return $app->redirect('/');
+    });
+
+    $app->get('/clients/{id}', function($id) use($app)  {
+        $client = Client::find($id);
+        return $app['twig']->render('client_edit.html.twig', ['client' => $client]);
+    });
+
+    $app->delete('/clients/{id}', function($id) use($app) {
+        $client = Client::find($id);
+        $client->delete();
+        return $app->redirect('/');
     });
 
     return $app;
