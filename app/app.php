@@ -22,12 +22,12 @@
         return $app["twig"]->render("homepage.html.twig", ['stylists' => Stylist::getAll()]);
     });
 
-    $app->post('add_stylist', function() use($app) {
+    $app->post('/add_stylist', function() use($app) {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $new_stylist = new Stylist($name, $description);
         $new_stylist->save();
-        return $app->redirect('/');
+        return $app["twig"]->render("homepage.html.twig", ['stylists' => Stylist::getAll()]);
     });
 
     $app->get('/stylists/{id}', function($id) use($app)  {
@@ -62,8 +62,6 @@
         $stylist->delete();
         return $app['twig']->render('homepage.html.twig', ['stylists' => Stylist::getAll()]);
     });
-
-
 
     return $app;
 ?>
