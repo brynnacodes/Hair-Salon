@@ -23,9 +23,23 @@
 
             //Act
             $result = $test_stylist->getName();
-            
+
             //Assert
             $this->assertEquals($name, $result);
+        }
+
+        function test_getDescription()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $test_stylist = new Stylist($name, $description);
+
+            //Act
+            $result = $test_stylist->getDescription();
+
+            //Assert
+            $this->assertEquals($description, $result);
         }
 
     }
