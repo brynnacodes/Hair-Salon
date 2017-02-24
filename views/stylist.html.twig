@@ -7,23 +7,26 @@
     <body>
         <div class = "container">
             <div class="jumbotron">
-                <h1>{{ stylist.getName() }}</h1>
+                <h1>{{ stylist.getName }}</h1>
+                <h3>{{ stylist.getDescription }}</h3>
             </div>
-            {% if stylists is not empty %}
-            <h3>Available Stylists:</h3>
+            {% if clients is not empty %}
             <ul>
-                {% for stylist in stylists %}
-                <li><a href="/stylists/{{stylist.getId()}}">{{stylist.getName()}}</a></li>
+                {% for client in clients %}
+                <li>{{client.getName}} {{client.getPhone()}}</li>
                 {% endfor %}
             </ul>
             {% endif %}
-            <form class="form-group" action="add_stylist" method="post">
-                <label for="name">Add Client name:</label>
+            <form class="form-group" action="/stylists/{{ stylist.getId }}" method="post">
+                <label for="name">Add client name:</label>
                 <input type="text" name="name" placeholder="name">
-                <label for="phone">Add Client phone:</label>
+                <label for="phone">Add client phone:</label>
                 <input type="text" name="phone" placeholder="phone">
-                <button class="btn">Add Client</button>
+                <button class="btn">Add client</button>
             </form>
+
+            <p><a href="/stylists/{{ stylist.getId }}/edit">Edit this stylist</a></p>
+            <p><a href="/">Home</a></p>
         </div>
     </body>
 </html>
