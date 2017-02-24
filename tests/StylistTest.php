@@ -118,6 +118,26 @@
             $this->assertEquals([], $result);
         }
 
+        function test_find()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $test_stylist = new Stylist($name, $description);
+            $test_stylist->save();
+
+            $name2 = "Carrie";
+            $description2 = "My specialties are womens cuts";
+            $test_stylist2 = new Stylist($name, $description);
+            $test_stylist2->save();
+
+            //Act
+            $result = Stylist::find($test_stylist->getId());
+
+            //Assert
+            $this->assertEquals($test_stylist, $result);
+        }
+
     }
 
 ?>
