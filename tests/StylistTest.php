@@ -98,6 +98,26 @@
             $this->assertEquals([$test_stylist, $test_stylist2], $result);
         }
 
+        function test_deleteAll()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $test_stylist = new Stylist($name, $description);
+            $test_stylist->save();
+
+            $name2 = "Carrie";
+            $description2 = "My specialties are womens cuts";
+            $test_stylist2 = new Stylist($name, $description);
+            $test_stylist2->save();
+            //Act
+            Stylist::deleteAll();
+            $result = Stylist::getAll();
+
+            //Assert
+            $this->assertEquals([], $result);
+        }
+
     }
 
 ?>
