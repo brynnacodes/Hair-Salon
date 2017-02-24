@@ -63,11 +63,6 @@
         return $app['twig']->render('homepage.html.twig', ['stylists' => Stylist::getAll()]);
     });
 
-    // $app->delete('/delete_clients', function() use($app) {
-    //     Client::deleteAll();
-    //     return $app['twig']->render('stylist.html.twig', ['stylist' => Stylist::getAll()]);
-    // });
-
 
 
     return $app;
