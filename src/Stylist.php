@@ -46,6 +46,11 @@
             $this->setDescription($new_description);
         }
 
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
+        }
+
         //using prepared statements will allow users to enter special characters such as apostrophes or backslashes without creating errors in the database; Also prevents against injection attacks
 
         function save()

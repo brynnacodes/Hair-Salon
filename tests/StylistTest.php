@@ -155,6 +155,27 @@
             $this->assertEquals($new_description, $result[0]->getDescription());
         }
 
+        function test_delete()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $test_stylist = new Stylist($name, $description);
+            $test_stylist->save();
+
+            $name2 = "Carrie";
+            $description2 = "My specialties are womens cuts";
+            $test_stylist2 = new Stylist($name, $description);
+            $test_stylist2->save();
+
+            //Act
+
+            $test_stylist->delete();
+
+            //Assert
+            $this->assertEquals([$test_stylist2], Stylist::getAll());
+        }
+
     }
 
 ?>
