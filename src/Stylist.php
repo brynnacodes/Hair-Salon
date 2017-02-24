@@ -1,0 +1,28 @@
+<?php
+    class Stylist
+    {
+        private $name;
+        private $description;
+        private $id;
+
+        function __construct($name, $description, $id = null)
+        {
+            $this->name = $name;
+            $this->description = $description;
+            $this->id = $id;
+        }
+
+        function setName($new_name)
+        {
+            $this->name = $new_name;
+        }
+
+        function getName()
+
+        {
+            return $this->name;
+        }
+    }
+
+
+?>
