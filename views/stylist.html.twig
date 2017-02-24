@@ -18,11 +18,10 @@
                 <input type="text" name="phone" placeholder="phone">
                 <button class="btn">Add client</button>
             </form>
-
             {% if clients is not empty %}
             <ul>
                 {% for client in clients %}
-                <li><a href="/clients/{{client.getId}}">{{client.getName}} {{client.getPhone()}}</a></li>
+                <li><a href="/clients/{{client.getId()}}/edit">{{client.getName}} {{client.getPhone()}}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}

@@ -21,10 +21,11 @@
             <h3>Available Stylists:</h3>
             <ul>
                 {% for stylist in stylists %}
-                <li><a href="/stylists/{{stylist.getId()}}">{{stylist.getName()}}</a></li>
+                    <li><a href="/stylists/{{stylist.getId()}}">{{stylist.getName()}}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}
+
         </div>
     </body>
 </html>

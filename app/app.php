@@ -19,7 +19,7 @@
 
     $app->get('/', function() use($app) {
 
-        return $app["twig"]->render("homepage.html.twig", ['stylists' => Stylist::getAll()]);
+        return $app["twig"]->render("homepage.html.twig", ['stylists' => Stylist::getAll(), 'clients' => Client::getAll()]);
     });
 
     $app->post('/add_stylist', function() use($app) {
@@ -63,9 +63,16 @@
         return $app->redirect('/');
     });
 
-    $app->get('/clients/{id}', function($id) use($app)  {
+    $app->get('/clients/{id}/edit', function($id) use($app)  {
         $client = Client::find($id);
         return $app['twig']->render('client_edit.html.twig', ['client' => $client]);
+    });
+
+    $app->patch('/clients/{id}/edit', function($id) use($app) {
+        $phone = $_POST['phone'];
+        $client = Client::find($id);
+        $client->updatePhone($phone);
+        return $app->redirect('/');
     });
 
     $app->delete('/clients/{id}', function($id) use($app) {
