@@ -51,6 +51,18 @@
             $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
         }
 
+        function getClients()
+        {
+            $clients = Client::getAll();
+            $matching_clients = [];
+            foreach ($clients as $client) {
+                if ($client->getStylistId() == $this->getId()) {
+                    array_push($matching_clients, $client);
+                }
+            }
+            return $matching_clients;
+        }
+
         //using prepared statements will allow users to enter special characters such as apostrophes or backslashes without creating errors in the database; Also prevents against injection attacks
 
         function save()

@@ -62,7 +62,7 @@
         function test_getId()
         {
             //Arrange
-            $name = "Robert";
+            $name = "Dan";
             $phone = "1234";
             $stylist_id = 3;
             $id = 1;

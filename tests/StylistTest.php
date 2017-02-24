@@ -176,6 +176,31 @@
             $this->assertEquals([$test_stylist2], Stylist::getAll());
         }
 
+        function getClients()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $test_stylist = new Stylist($name, $description);
+            $test_stylist->save();
+
+            $name = "Dan";
+            $phone = "1234";
+            $stylist_id = 3;
+            $test_client = new Client($name, $phone, $stylist_id);
+
+            $name2 = "Louise";
+            $phone2 = "1324";
+            $stylist_id2 = $test_stylist->getId();
+            $test_client2 = new Client($name, $phone, $stylist_id);
+
+            //Act
+            $result = $test_stylist->getClients();
+
+            //Assert
+            $this->assertEquals([$test_client2], $result);
+        }
+
     }
 
 ?>
