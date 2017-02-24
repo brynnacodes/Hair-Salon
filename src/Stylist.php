@@ -33,6 +33,11 @@
         {
             return $this->description;
         }
+
+        function getId()
+        {
+            return $this->id;
+        }
     }
 
 

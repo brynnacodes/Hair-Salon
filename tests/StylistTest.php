@@ -14,6 +14,7 @@
 
     class StylistTest extends PHPUnit_Framework_TestCase
     {
+
         function test_getName()
         {
             //Arrange
@@ -41,6 +42,23 @@
             //Assert
             $this->assertEquals($description, $result);
         }
+
+        function test_getId()
+        {
+            //Arrange
+            $name = "Robert";
+            $description = "My specialties are mens cuts and styles";
+            $id = 1;
+            $test_stylist = new Stylist($name, $description, $id);
+
+            //Act
+            $result = $test_stylist->getId();
+
+            //Assert
+            $this->assertEquals(true, is_numeric($result));
+        }
+
+
 
     }
 
