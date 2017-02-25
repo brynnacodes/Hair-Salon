@@ -1,23 +1,44 @@
 /*general styles*/
 
 body {
-    background-color: silver;
+    background-image: url("/../img/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
 }
 
 .jumbotron {
     text-align: center;
+    background-color: #A9BCD0;
+    background:rgba(255,255,255,0.8)
+}
+
+.jumbotron h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 90px;
+    letter-spacing: 3;
 }
 
 .btn {
-    background-color: white;
+    background-color: grey;
+    color: white;
+    font-size: 16px;
 }
 
 .form-div {
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: #A9BCD0;
-    background:rgba(255,255,255,0.5);
-    margin-top: 7%;
-    margin-right: auto;
-    margin-left: auto;
+    background:rgba(255,255,255,0.8);
+    margin-top: 5%;
     padding: 20px;
+}
+
+input {
+    margin-top: 1%;
+    border-radius: 2px;
+}
+
+#delete-clients {
+    margin-top: 1%;
 }
