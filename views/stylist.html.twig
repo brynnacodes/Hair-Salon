@@ -28,6 +28,9 @@
             {% endif %}
 
             <a href="/stylists/{{ stylist.getId }}/edit"><button class="btn">Edit this stylist</button></a>
+            <form class="form-group" action="/delete_clients" method="post">
+                <button class="btn" type="submit">Delete all clients</button>
+            </form>
             <a href="/"><button class="btn">Home</button></a>
         </div>
     </body>
