@@ -1,41 +1,49 @@
-# _Hair Salon_
+# _Scissorhands Salon_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A web app build to manage, edit, and delete stylist and client information using a msql database.  02/24/17_
 
-#### By _**{List of contributors}**_
+#### By _**Brynna Klamkin-McCarter**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This web app allows salon owners to add new stylists, view the clients associated with each stylist, and edit and/or delete information about both._
 
-## Specifications
-
-
+## Database Setup Commands
+* _In the msql shell run the following commmands_
+* _CREATE DATABASE hair_salon;_
+* _USE hair_salon;_
+* _CREATE TABLE stylists(id serial PRIMARY KEY, name VARCHAR (255), description VARCHAR (255));_
+* _CREATE TABLE clients(id serial PRIMARY KEY, name VARCHAR (255), phone INT, stylist_id INT);_
+* _Navigate to localhost:8888/phpmyadmin and click on hair_salon, then operations, then copy the database to a new database named hair_salon_test;_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* _Clone this repository to your device_
+* _Start MAMP or other combination of Apache server and MySQL, and make sure the port is set to localhost:8889_
+* _Install composer in the project folder_
+* _Navigate to the web folder and start a development server at localhost:8000_
+* _Navigate to localhost:8000 in your preferred web browser_
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Please contact Brynna Klamkin-McCarter for questions, support, or suggestions_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* _PHP_
+* _Twig_
+* _Silex_
+* _MySQL_
+* _Composer_
+* _phpUnit_
+* _Bootstrap/CSS_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*This software is licensed under the MIT license*
 
-Copyright (c) 2017 **_{List of contributors or company name}_**
+Copyright (c) 2017 **_Brynna Klamkin-McCarter_**
