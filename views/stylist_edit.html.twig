@@ -4,20 +4,26 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css">
     </head>
     <body>
-        <h3>Update {{ stylist.getName }}'s bio!</h3>
-        <form class="form-group" action="/stylists/{{ stylist.getId }}" method="post">
-            <input name="_method" type="hidden" value="patch">
+        <div class = "container">
+            <h3>Update {{ stylist.getName }}'s bio!</h3>
+            <div class="form-div">
+                <form class="form-group" action="/stylists/{{ stylist.getId }}" method="post">
+                    <input name="_method" type="hidden" value="patch">
 
-            <label for="description">Edit information about this stylist:</label>
-            <input id="description" name="description" type="text">
+                    <label for="description">Edit information about this stylist:</label>
+                    <input id="description" name="description" type="text">
 
-            <button class="btn" type="submit">Update!</button>
-        </form>
-        <form class="form-group" action="/stylists/{{ stylist.getId }}" method="post">
-            <input name="_method" type="hidden" value="delete">
-            <button class="btn" type="submit">Delete this stylist</button>
-        </form>
+                    <button class="btn" type="submit">Update!</button>
+                </form>
+                <form class="form-group" action="/stylists/{{ stylist.getId }}" method="post">
+                    <input name="_method" type="hidden" value="delete">
+                    <button class="btn" type="submit">Delete this stylist</button>
+                </form>
+                <a href="/"><button class="btn">Home</button></a>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,0 +1,23 @@
+/*general styles*/
+
+body {
+    background-color: silver;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.btn {
+    background-color: white;
+}
+
+.form-div {
+    border-radius: 3px;
+    background-color: #A9BCD0;
+    background:rgba(255,255,255,0.5);
+    margin-top: 7%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+}
